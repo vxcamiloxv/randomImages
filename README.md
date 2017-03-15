@@ -17,7 +17,7 @@ Usage
 -------
 
 ```shell
-  bin/app
+  npm run serve
 ```
 
 #### Config ####
