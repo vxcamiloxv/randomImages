@@ -1,0 +1,76 @@
+<!-- -*- engine: nunjucks -*- -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    {{= page.title =}}
+{% endblock %}
+
+{% block body %}
+    <div v-for="error in errors">
+        <p class="bg-warning">
+            {{ error.message }}
+        </p>
+    </div>
+    <div v-if="isAuthorized">
+
+        <div class="col-sm-3">
+            <div class="user-details">
+                <p class="text-center">
+                    <img v-if="user.avatar" :src="admin.avatar" class="avatar img-circle img-responsive center-block" />
+                    <strong>
+                        Welcome:  {{admin.name}}
+                    </strong>
+                </p>
+            </div>
+
+            <div class="panel panel-default">
+
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <h3 class="text-center">
+                User image preferences
+            </h3>
+            <div v-if="!users.length">
+                <p class="text-center padding bg-info">
+                    No users register
+                </p>
+            </div>
+            <div class="select-block" v-if="users.length">
+                <select class="form-control" @change="userImages($event.target.value)">
+                    <option>Please selct a user</option>
+                    <option v-for="u in users" :value="u.email">
+                        {{u.email}} ({{u.name}})
+                    </option>
+                </select>
+                </div>
+                <div class="row image-block">
+                    <div href="#" class="col-md-3 img-thumbnail" v-for="image in images">
+                        <div>
+                            <img v-bind:src="image.url"/>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+    <div v-else class="col-lg-1 text-center">
+        <h3>
+            Welcome to Admin of RandomImage, please login to continue
+        </h3>
+        <form id="form" v-on:submit.prevent="signIn">
+            <div class="form-group">
+                <input type="email" class="form-control" v-model="newUser.email" placeholder="email@email.com">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" v-model="newUser.password" placeholder="Password">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login">
+        </form>
+        <p v-show="!validation.email" class="text-danger">Please provide a valid email address.</p>
+        <p v-show="!validation.password" class="text-danger">Password cannot be empty.</p>
+
+    </div>
+{% endblock %}

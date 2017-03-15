@@ -1,0 +1,49 @@
+<!-- -*- engine: nunjucks -*- -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="/">
+        <meta charset="utf-8"/>
+        <title>{% block head_title %} {{= site.siteName =}} {% endblock %}</title>
+
+        <meta name="description" content="Camilo Quimbayo randomImage test">
+        <meta name="author" content="Camilo Quimbayo">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+        <link rel="stylesheet" href="/static/css/main.min.css" type="text/css">
+        {% block head%}
+        {% endblock %}
+    </head>
+
+    <body>
+
+        <div id="app" v-cloak>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <a class="navbar-brand"><i class="fa fa-picture-o"></i>  {{= site.siteName =}}</a>
+                    {%  block navbar %}
+                        <a href="#" v-on:click="logOut" class="navbar-logout" v-if="isAuthorized" >
+                            <i class="glyphicon glyphicon-log-in"></i>
+                            Logout
+                        </a>
+                    {% endblock %}
+                </div>
+            </nav>
+
+            <div class="container">
+
+                {# <h3> {% block title %} Run  {% endblock %}  </h3> #}
+
+                {% block body %}
+
+                {% endblock %}
+
+            </div> <!-- /container -->
+        </div>
+
+        <!-- Better performance script's here -->
+        <script type="text/javascript" charset="utf-8" src="/static/js/app.min.js"></script>
+
+    </body>
+</html>

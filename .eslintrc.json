@@ -1,0 +1,50 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "destructuring": true
+    }
+  },
+  "rules": {
+    "strict": ["error", "function"],
+    "indent": ["error", 4],
+    "max-params": ["error", 10],
+    "max-depth": ["error", 4],
+    "max-len": ["error", 120],
+    "max-statements-per-line": ["error", { "max": 1 }],
+    "curly": ["error", "all"],
+    "quotes": ["error", "double"],
+    "guard-for-in": "error",
+    "new-cap": ["error", { "newIsCap": true, "capIsNew": true, "properties": false  }],
+    "no-new": "error",
+    "no-caller": "error",
+    "no-empty": "error",
+    "no-undef-init": "warn",
+    "no-loop-func": "error",
+    "no-new-func": "error",
+    "no-cond-assign": ["error", "always"],
+    "no-const-assign": "error",
+    "no-extend-native": "error",
+    "no-console": "warn",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-use-before-define": ["error", "nofunc"],
+    "no-unused-vars": ["error", {"vars": "all", "args": "none"}],
+    "no-trailing-spaces": "warn",
+    "no-empty-function": "error",
+    "no-multiple-empty-lines": "error",
+    "wrap-iife": ["error", "inside"],
+    "linebreak-style": ["warn", "unix"],
+    "space-before-function-paren": ["warn", "always"],
+    "space-before-blocks": ["warn", "always"],
+    "space-in-parens": ["warn", "never"],
+    "space-infix-ops": ["warn", {"int32Hint": false}],
+    "spaced-comment": ["warn", "always"],
+    "yoda": "error"
+  }
+}

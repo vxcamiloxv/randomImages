@@ -1,0 +1,16 @@
+{
+  "libs": [
+    "ecmascript",
+    "underscore"
+  ],
+  "loadEagerly": [
+    "app/routes/**/*.js",
+    "app/modules/**/*.js",
+    "app/helpers/**/*.js",
+    "app/controllers/**/*.js"
+  ],
+  "plugins": {
+    "node": {},
+    "complete_strings": {}
+  }
+}

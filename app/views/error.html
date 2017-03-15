@@ -1,0 +1,12 @@
+<!-- -*- engine: nunjucks -*- -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    {{= page.title =}}
+{% endblock %}
+
+{% block body %}
+    <h2>{{= error.status =}} : {{= error.message =}}</h2>
+    <pre>{{= error.stack =}}</pre>
+{% endblock %}
