@@ -20,7 +20,7 @@
     const config = require("../../../config");
 
     // Plugins
-          Vue.use(vueResource);
+    Vue.use(vueResource);
     Vue.use(vueFire);
     Vue.use(vueLogger, { prefix: new Date(), dev: true });
     Vue.use(vueJsonp, 5000);
