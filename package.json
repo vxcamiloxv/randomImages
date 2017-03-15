@@ -5,6 +5,7 @@
   "main": "app/server.js",
   "scripts": {
     "serve": "node ./app/server.js",
+    "start": "node ./app/server.js",
     "lint": "eslint app/ app/views/src",
     "build_fonts": "mkdir -p public/static/fonts && cp node_modules/bootstrap/fonts/* public/static/fonts/",
     "build_less": "lessc app/views/src/less/main.less public/static/css/main.min.css",
