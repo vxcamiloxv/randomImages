@@ -11,7 +11,7 @@
     "build_less": "lessc app/views/src/less/main.less public/static/css/main.min.css",
     "build_statics": "npm run build_fonts && npm run build_less",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js && npm run build_statics",
-    "devel": "cross-env NODE_ENV=development webpack --progress --hide-modules --config build/webpack.config.js"
+    "devel": "cross-env NODE_ENV=development webpack --progress --hide-modules --config build/webpack.config.js",
     "postinstall": "npm run build_statics && npm run build"
   },
   "repository": {
