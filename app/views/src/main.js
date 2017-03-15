@@ -17,21 +17,16 @@
     const vueFire = require("vuefire");
     const vueJsonp = require("vue-jsonp");
     const vueLogger = require("vue-logger");
+    const config = require("../../../config");
 
     // Plugins
-    Vue.use(vueResource);
+          Vue.use(vueResource);
     Vue.use(vueFire);
     Vue.use(vueLogger, { prefix: new Date(), dev: true });
     Vue.use(vueJsonp, 5000);
 
     // Firebase
-    firebase.initializeApp({
-        apiKey: "AIzaSyC2NZYyhvheiiJaLQ-vjXt3lLjJZgRNA50",
-        authDomain: "randomimagetest.firebaseapp.com",
-        databaseURL: "https://randomimagetest.firebaseio.com",
-        storageBucket: "randomimagetest.appspot.com",
-        messagingSenderId: "763894413022"
-    });
+    firebase.initializeApp(config.firebase);
     var db = firebase.database();
     var userRef = db.ref("users");
     var imageRef = db.ref("images");
